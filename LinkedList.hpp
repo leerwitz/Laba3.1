@@ -270,3 +270,74 @@ public:
 
 };
 
+//ИТЕРАТОРЫ
+
+template<class T>
+
+struct IteratorList {
+
+
+
+public:
+
+    IteratorList(LinkedList<T> list)  : elem(list.First()), item(0) {}
+    IteratorList(LinkedList<T> list, int ind) : elem(list.Next(ind - 1)) {
+        item = ind;
+    }
+
+    IteratorList<T>& operator++() override {
+        elem = elem->Next(item);
+        ++item;
+        return *this;
+    }
+
+    IteratorList<T>& operator--() override {
+        elem = *elem->Prev(item);
+        --item;
+        return *this;
+    }
+
+    IteratorList<T>& operator-=(int displacement) override {
+        for (int i = 0; i < displacement; ++i) {
+            elem = *elem->Prev(item);
+            --item;
+        }
+        return *this;
+    }
+
+    IteratorList<T>& operator+=(int displacement) override {
+        for (int i = 0; i < displacement; ++i) {
+            elem = elem->Next(item);
+            ++item;
+        }
+        return *this;
+    }
+
+    T& operator*() const override {
+        return elem->val;
+    }
+
+    bool operator== (IteratorList<T> const& iter) override {
+        return this->elem->val == iter.operator*() ;
+    }
+
+
+    bool  operator!= (IteratorList<T> const& iter) override {
+        return this->elem->val != iter.operator*();
+    }
+
+    T&  operator[] (const size_t& i){
+        Elem<T>* current = this->elem;
+        for (int j = 1; j < i ; ++j) {
+            current = current->next;
+        }
+        return current->val;
+    }
+
+
+private:
+    Elem<T>* const elem;
+    int item;
+
+};
+

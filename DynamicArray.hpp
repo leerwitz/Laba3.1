@@ -12,7 +12,7 @@ public:
     DynamicArray(T* items, std::size_t size1, std:: size_t capacity1 ) noexcept : array(new T[capacity1]), size(size1), capacity(capacity1){
         std::copy(items,items + capacity1, array);
     }
-    ~DynamicArray() noexcept  {delete* array;}
+    ~DynamicArray() noexcept  {delete[] array;}
 public:
     T& get(std::size_t index)  const noexcept {return this->array[index] ;}
     std::size_t  getSize() const noexcept {return this->size;}
@@ -98,6 +98,65 @@ private:
     std::size_t  capacity;
 
 };
+
+template<class T>
+struct IteratorArray {
+    IteratorArray() : elem(nullptr) {}
+
+    IteratorArray(T *el) : elem(nullptr) {
+        elem = el;
+    }
+
+
+    IteratorArray<T> &operator++()  {
+        ++CurrentInd;
+        return IteratorArray(++elem);
+    }
+
+    T& operator*() const {
+        return *elem;
+    }
+
+    T& operator->() {
+        return *elem;
+    }
+    T& operator[](const size_t& i){
+        return elem[i];
+    }
+
+    IteratorArray<T> &operator--()  {
+
+        --CurrentInd;
+        return IteratorArray(--elem);
+    }
+
+    bool operator==(IteratorArray<T> const& iter)  {
+        return this == iter;
+    }
+
+    bool operator!=(IteratorArray<T> const& iter)  {
+        return this != iter;
+    }
+
+    IteratorArray<T> &operator+=(std::size_t displacement)  {
+
+        CurrentInd += displacement;
+
+        return IteratorArray(elem + displacement);
+    }
+
+    IteratorArray<T> &operator-=(std::size_t displacement) override {
+        CurrentInd -= displacement;
+
+        return IteratorArray(elem - displacement);
+    }
+
+
+private:
+    T *elem;
+    std::size_t CurrentInd;
+};
+
 
 
 

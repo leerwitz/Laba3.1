@@ -55,12 +55,6 @@ build CMakeFiles/laba2_test.dir/main.cpp.obj: CXX_COMPILER__laba2_test_Debug C$:
   OBJECT_DIR = CMakeFiles\laba2_test.dir
   OBJECT_FILE_DIR = CMakeFiles\laba2_test.dir
 
-build CMakeFiles/laba2_test.dir/IteratorList.cpp.obj: CXX_COMPILER__laba2_test_Debug C$:/Users/Andryweru/CLionProjects/laba2_test/IteratorList.cpp || cmake_object_order_depends_target_laba2_test
-  DEP_FILE = CMakeFiles\laba2_test.dir\IteratorList.cpp.obj.d
-  FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = CMakeFiles\laba2_test.dir
-  OBJECT_FILE_DIR = CMakeFiles\laba2_test.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target laba2_test
@@ -69,7 +63,7 @@ build CMakeFiles/laba2_test.dir/IteratorList.cpp.obj: CXX_COMPILER__laba2_test_D
 #############################################
 # Link the executable laba2_test.exe
 
-build laba2_test.exe: CXX_EXECUTABLE_LINKER__laba2_test_Debug CMakeFiles/laba2_test.dir/main.cpp.obj CMakeFiles/laba2_test.dir/IteratorList.cpp.obj
+build laba2_test.exe: CXX_EXECUTABLE_LINKER__laba2_test_Debug CMakeFiles/laba2_test.dir/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\laba2_test.dir

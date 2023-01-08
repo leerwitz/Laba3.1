@@ -1,7 +1,6 @@
 #include <iostream>
 #include "DynamicArray.hpp"
 #include "LinkedList.hpp"
-#include "Sort.hpp"
 #include <vector>
 #include "VectorSorter.hpp"
 #include "libs.hpp"
@@ -72,115 +71,139 @@ int main() {
 
     //быстрая сортировка вектора
     t_start = high_resolution_clock::now();
-    quick_sort(vec1_qs,vec1.size(),0);
+    //quick_sort(vec1_qs,vec1.size(),0);
     t_end = high_resolution_clock::now();
     time_span4 = duration_cast<duration<double>>(t_end - t_start);
+    /*for (int i = 0; i < 60000; ++i) {
+        std::cout << vec1_qs[i] << " ";
+    }*/
 
     t_start = high_resolution_clock::now();
-    quick_sort(vec2_qs,vec1.size(),0);
+    //quick_sort(vec2_qs,vec1.size(),0);
     t_end = high_resolution_clock::now();
     time_span5 = duration_cast<duration<double>>(t_end - t_start);
+    /*for (int i = 0; i < 65000; ++i) {
+        std::cout << vec2_qs[i] << " ";
+    }*/
 
     t_start = high_resolution_clock::now();
-    quick_sort(vec3_qs,vec1.size(),0);
+    //quick_sort(vec3_qs,vec1.size(),0);
     t_end = high_resolution_clock::now();
     time_span6 = duration_cast<duration<double>>(t_end - t_start);
-
+    /*for (int i = 0; i < 70000; ++i) {
+        std::cout << vec3_qs[i] << " ";
+    }*/
     //сортировка слиянием вектора
     t_start = high_resolution_clock::now();
-    merge_sort(vec1_ms);
+    //merge_sort(vec1_ms);
     t_end = high_resolution_clock::now();
     time_span7 = duration_cast<duration<double>>(t_end - t_start);
-
+    /*for (int i = 0; i < 60000; ++i) {
+        std::cout << vec1_ms[i] << " ";
+    }*/
     t_start = high_resolution_clock::now();
-    merge_sort(vec2_ms);
+    //merge_sort(vec2_ms);
     t_end = high_resolution_clock::now();
     time_span8 = duration_cast<duration<double>>(t_end - t_start);
-
+    /*for (int i = 0; i < 65000; ++i) {
+        std::cout << vec2_ms[i] << " ";
+    }*/
     t_start = high_resolution_clock::now();
-    merge_sort(vec3_ms);
+    //merge_sort(vec3_ms);
     t_end = high_resolution_clock::now();
     time_span9 = duration_cast<duration<double>>(t_end - t_start);
-    /* for (int i = 1; i <= 35000; ++i) {
-         std::cout << first_ms3->val<<" ";
-         first_ms3 = first_ms3->next;
-     }*/
+    /*for (int i = 0; i < 70000; ++i) {
+        std::cout << vec3_ms[i] << " ";
+    }*/
     //сортировка пузырьком вектора
     t_start = high_resolution_clock::now();
-    bubble_sort(vec1);
+    //bubble_sort(vec1);
     t_end = high_resolution_clock::now();
     time_span1 = duration_cast<duration<double>>(t_end - t_start);
-
+    /*for (int i = 0; i < 60000; ++i) {
+        std::cout << vec1[i] << " ";
+    }*/
     t_start = high_resolution_clock::now();
-    bubble_sort(vec2);
+    //bubble_sort(vec2);
     t_end = high_resolution_clock::now();
     time_span2 = duration_cast<duration<double>>(t_end - t_start);
-
+    /*for (int i = 0; i < 65000; ++i) {
+        std::cout << vec2[i] << " ";
+    }*/
     t_start = high_resolution_clock::now();
-    bubble_sort(vec3);
+   // bubble_sort(vec3);
     t_end = high_resolution_clock::now();
     time_span3 = duration_cast<duration<double>>(t_end - t_start);
+    /*for (int i = 0; i < 70000; ++i) {
+        std::cout << vec3[i] << " ";
+    }*/
 
 
-
-    /*//быстрая сортировка cc
+    //быстрая сортировка cc
     t_start = high_resolution_clock::now();
     list1_qs->QuickSort(list1_qs->LinkFirst(),list1_qs->LinkLast());
     t_end = high_resolution_clock::now();
     time_span4 = duration_cast<duration<double>>(t_end - t_start);
-
+    //for (int i = 1; i <= 60000; ++i) {std::cout << list1_qs->Get(i) << " ";}
     t_start = high_resolution_clock::now();
     list2_qs->QuickSort(list2_qs->LinkFirst(),list2_qs->LinkLast());
     t_end = high_resolution_clock::now();
     time_span5 = duration_cast<duration<double>>(t_end - t_start);
-
+    //for (int i = 1; i <= 65000; ++i) {std::cout << list2_qs->Get(i) << " ";}
     t_start = high_resolution_clock::now();
     list3_qs->QuickSort(list3_qs->LinkFirst(),list3_qs->LinkLast());
-
-   t_end = high_resolution_clock::now();
+    t_end = high_resolution_clock::now();
     time_span6 = duration_cast<duration<double>>(t_end - t_start);
-
+    //for (int i = 1; i <= 70000; ++i) {std::cout << list3_qs->Get(i) << " ";}
     //сортировка слиянием cc
     t_start = high_resolution_clock::now();
     list1_ms->MergeSort(&first_ms1);
     t_end = high_resolution_clock::now();
     time_span7 = duration_cast<duration<double>>(t_end - t_start);
-
+    /*for (int i = 1; i <= 60000; ++i) {
+        std::cout << first_ms1->val << " ";
+        first_ms1 = first_ms1->next;
+    }*/
     t_start = high_resolution_clock::now();
     list2_ms->MergeSort(&first_ms2);
     t_end = high_resolution_clock::now();
     time_span8 = duration_cast<duration<double>>(t_end - t_start);
-
+   /* for (int i = 1; i <= 65000; ++i) {
+        std::cout << first_ms2->val << " ";
+        first_ms2 = first_ms2->next;
+    }*/
     t_start = high_resolution_clock::now();
     list3_ms->MergeSort(&first_ms3);
     t_end = high_resolution_clock::now();
     time_span9 = duration_cast<duration<double>>(t_end - t_start);
-    /*for (int i = 1; i <= 35000; ++i) {
-        std::cout << first_ms3->val<<" ";
+    /*for (int i = 1; i <= 70000; ++i) {
+        std::cout << first_ms3->val << " ";
         first_ms3 = first_ms3->next;
     }*/
-   /* //сортировка пузырьком cc
+    //сортировка пузырьком cc
     t_start = high_resolution_clock::now();
     list1_bs->BubbleSortList(list1_bs->LinkFirst(),list1_bs->LinkLast());
     t_end = high_resolution_clock::now();
     time_span1 = duration_cast<duration<double>>(t_end - t_start);
-
+       /* for (int i = 1; i <= 60000; ++i) {
+            std::cout << list1_bs->Get(i) << " ";
+        }*/
     t_start = high_resolution_clock::now();
     list2_bs->BubbleSortList(list2_bs->LinkFirst(),list2_bs->LinkLast());
     t_end = high_resolution_clock::now();
     time_span2 = duration_cast<duration<double>>(t_end - t_start);
-
+        //for (int i = 1; i <= 65000; ++i) {std::cout << list2_bs->Get(i) << " ";}
     t_start = high_resolution_clock::now();
     list3_bs->BubbleSortList(list3_bs->LinkFirst(),list3_bs->LinkLast());
     t_end = high_resolution_clock::now();
     time_span3 = duration_cast<duration<double>>(t_end - t_start);
-*/
+        //for (int i = 1; i <= 70000; ++i) {std::cout << list3_bs->Get(i) << " ";}
 
     file.open("comparison.csv", fstream::out | fstream::in | fstream::app);
     //Количество элементов;Время работы алгоритма сортировки пузырьком;Время работы алгоритма быстрой сортировки;Время работы алгоритма сортировки слиянием
-    file << 60000 << ";" << time_span1.count() << ";" << time_span4.count() << ";" << time_span7.count() << ";" << "\n";
-    file << 65000 << ";" << time_span2.count() << ";" << time_span5.count() << ";" << time_span8.count() << ";" << "\n";
-    file << 70000 << ";" << time_span3.count() << ";" << time_span6.count() << ";" << time_span9.count() << ";" << "\n";
+    //file << 60000 << ";" << time_span1.count() << ";" << time_span4.count() << ";" << time_span7.count() << ";" << "\n";
+    //file << 65000 << ";" << time_span2.count() << ";" << time_span5.count() << ";" << time_span8.count() << ";" << "\n";
+    //file << 70000 << ";" << time_span3.count() << ";" << time_span6.count() << ";" << time_span9.count() << ";" << "\n";
     file.close();
 
 

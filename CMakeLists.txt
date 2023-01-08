@@ -3,4 +3,4 @@ project(laba2_test)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(laba2_test main.cpp DynamicArray.hpp LinkedList.hpp Sequence.hpp ArraySequence.hpp LinkedListSequence.hpp  IteratorArray.hpp IteratorList.cpp IteratorList.hpp Sort.hpp Sort.hpp  VectorSorter.hpp libs.hpp)
+add_executable(laba2_test main.cpp DynamicArray.hpp LinkedList.hpp Sequence.hpp ArraySequence.hpp LinkedListSequence.hpp VectorSorter.hpp libs.hpp)
