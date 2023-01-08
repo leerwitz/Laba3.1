@@ -1,3 +1,0 @@
-C:/Users/Andryweru/CLionProjects/laba2_test/cmake-build-debug/CMakeFiles/laba2_test.dir
-C:/Users/Andryweru/CLionProjects/laba2_test/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Andryweru/CLionProjects/laba2_test/cmake-build-debug/CMakeFiles/rebuild_cache.dir
